@@ -82,7 +82,7 @@ img {
         float: left;
         margin-right: 40px;
     }
-    
+
     &[src$="align-right"] {
         float: right;
         margin-left: 40px;
@@ -101,14 +101,6 @@ pre {
     code {
         padding: 0;
     }
-}
-
-code {
-    padding: 2px 4px;
-    font-size: 90%;
-    color: $primary;
-    background-color: #F1F0EA;
-    border-radius: 4px
 }
 
 hr {
