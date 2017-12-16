@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+        <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.BaseURL }}favicon.png" />
         <title>{{ .Title }} &middot; {{ .Site.Author.name }}</title>
         <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
         <meta name="HandheldFriendly" content="True">
