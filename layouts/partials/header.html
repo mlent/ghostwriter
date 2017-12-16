@@ -8,13 +8,19 @@
         <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@{{ .Site.Params.twitter }}" />
         <meta name="twitter:creator" content="@{{ .Site.Params.twitter }}" />
         <meta name="twitter:title" content="{{ .Title }}" />
         <meta name="twitter:description" content="{{ .Description }}" />
         <meta name="twitter:url" content="{{ .Permalink }}" />
-        <meta name="twitter:image" content="http://monicalent.com/assets/images/image01.jpg">
+        {{ if .Params.image }}
+          <meta name="twitter:image" content="{{ substr .Site.BaseURL 0 -1 }}{{ .Params.image }}">
+          <meta name="twitter:card" content="summary_large_image" />
+        {{ else }}
+          <meta name="twitter:image" content="http://monicalent.com/assets/images/image01.jpg">
+          <meta name="twitter:card" content="summary" />
+        {{ end }}
+
         {{ .Hugo.Generator }}
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
